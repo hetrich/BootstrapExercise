@@ -23,7 +23,10 @@ nav {
   .container-xxl {
     height: 100px;
     background-color: white;
-    // background-color: grey;
+    @media (max-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+    }
     a {
       color: #374151;
     }
@@ -33,13 +36,14 @@ nav {
   }
 
   .nav-item {
+    @media (max-width: 768px) {
+      display: none;
+    }
     .user-icon {
       position: relative;
-      // background-color: #6366f1;
       &:focus ~ .login-remind {
         display: flex;
         background-color: white;
-        // background-color: burlywood;
         height: 50px;
       }
     }
@@ -49,7 +53,6 @@ nav {
       position: absolute;
       width: 150px;
       height: 0px;
-      // border: 1px solid gray;
       z-index: 2;
       border-radius: 5px;
       font-weight: 500px;
@@ -71,7 +74,71 @@ nav {
       }
     }
   }
+
+  .burger-link {
+    // overflow: hidden;
+    background-color: black;
+    display: none;
+    position: relative;
+    @media (max-width: 768px) {
+      display: block;
+      width: 100px;
+      height: 100px;
+    }
+
+    &:focus > .nav {
+      display: block;
+      width: 100%;
+      height: 100px;
+    }
+    .nav {
+      position: absolute;
+      top: 100px;
+      z-index: 99999;
+      background-color:black;
+      width: 100%;
+      height: 100%;
+      // display: none;
+      .nav-item2 {
+        .user-icon {
+          position: relative;
+          &:focus ~ .login-remind {
+            display: flex;
+            background-color: white;
+            height: 50px;
+          }
+        }
+        .login-remind {
+          display: none;
+          overflow: hidden;
+          position: absolute;
+          width: 150px;
+          height: 0px;
+          z-index: 2;
+          border-radius: 5px;
+          font-weight: 500px;
+          font-size: 0.9rem;
+          align-items: center;
+          justify-content: center;
+          transform: translate(-70%, 0);
+          padding-top: 15px;
+          p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 90%;
+            height: 100%;
+            &:hover {
+              background-color: #e5e7eb;
+            }
+          }
+        }
+      }
+    }
+  }
 }
+
 main {
   // swiper部分
   #section1 {
@@ -298,7 +365,7 @@ main {
     width: 100%;
     // height: 90vh;
     margin-top: 100px;
-    margin-bottom: 200px; 
+    margin-bottom: 200px;
     //上半部標題
     .price-top {
       text-align: center;
@@ -397,7 +464,7 @@ main {
         padding: 30px;
         border: 0;
         background-color: #f3f4f6;
-        
+
         img {
           width: 100%;
           height: 100%;
@@ -745,6 +812,14 @@ main {
     height: 70vh;
     padding: 0;
     position: relative;
+    @media (max-width: 1600px) {
+      height: 80vh;
+    }
+
+
+    @media (max-width: 1024px) {
+      height: 110vh;
+    }
     iframe {
       width: 100%;
       height: 100%;
@@ -897,7 +972,7 @@ footer {
       .svg {
         height: 20px;
         margin-right: 3px;
-        color:#303031;
+        color: #303031;
         img {
           height: 20px;
           width: 20px;
