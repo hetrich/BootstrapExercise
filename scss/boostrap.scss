@@ -25,7 +25,7 @@ nav {
     height: 100px;
     background-color: white;
     justify-content: space-between;
-    @media (max-width: 768px) {
+    @media (max-width: 859px) {
       display: flex;
       // justify-content: space-between;
     }
@@ -38,7 +38,7 @@ nav {
   }
 
   .nav-item {
-    @media (max-width: 1280px) {
+    @media (max-width: 859px) {
       display: none;
     }
     .user-icon {
@@ -81,7 +81,7 @@ nav {
     background-color: transparent;
     display: none;
 
-    @media (max-width: 768px) {
+    @media (max-width: 859px) {
       display: block;
       width: 100px;
       height: 100px;

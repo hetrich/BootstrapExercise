@@ -1,0 +1,412 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+// 導覽列
+
+nav {
+  // 導覽列logo
+  position: relative;
+  .logo {
+    width: 105px;
+    height: 60px;
+    margin-right: 250px;
+    padding-top: 18px;
+    img {
+      width: 105px;
+      height: 60px;
+    }
+  }
+  .container-xxl {
+    height: 100px;
+    background-color: white;
+    justify-content: space-between;
+    @media (max-width: 859px) {
+      display: flex;
+      // justify-content: space-between;
+    }
+    a {
+      color: #374151;
+    }
+    i {
+      font-size: 25px;
+    }
+  }
+
+  .nav-item {
+    @media (max-width: 859px) {
+      display: none;
+    }
+    .user-icon {
+      position: relative;
+      &:focus ~ .login-remind {
+        display: flex;
+        background-color: white;
+        height: 50px;
+      }
+    }
+    .login-remind {
+      display: none;
+      overflow: hidden;
+      position: absolute;
+      width: 150px;
+      height: 0px;
+      z-index: 2;
+      border-radius: 5px;
+      font-weight: 500px;
+      font-size: 0.9rem;
+      align-items: center;
+      justify-content: center;
+      transform: translate(-70%, 0);
+      padding-top: 15px;
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        width: 90%;
+        height: 100%;
+        &:hover {
+          background-color: #e5e7eb;
+        }
+      }
+    }
+  }
+  // 漢堡連結
+  .burger-link {
+    background-color: transparent;
+    display: none;
+
+    @media (max-width: 859px) {
+      display: block;
+      width: 100px;
+      height: 100px;
+    }
+
+    .burger-box {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      #burger {
+        &:checked ~.nav {
+        display: flex;
+        }
+      }
+    }
+
+    .nav {
+      position: absolute;
+      top: 100px;
+      left: 0;
+      z-index: 2;
+      background-color: #e5e7eb;
+      width: 100%;
+      height: auto;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      .nav-item2 {
+        width: 100%;
+        .user-icon {
+          position: relative;
+          &:focus ~ .login-remind {
+            display: flex;
+            background-color: white;
+            height: 50px;
+          }
+        }
+        .login-remind {
+          display: none;
+          overflow: hidden;
+          position: absolute;
+          left: 50%;
+          width: 150px;
+          height: 0px;
+          z-index: 2;
+          border-radius: 5px;
+          font-weight: 500px;
+          font-size: 0.9rem;
+          align-items: center;
+          justify-content: center;
+          transform: translate(-50%, 0);
+          padding-top: 15px;
+          p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 90%;
+            height: 100%;
+            &:hover {
+              background-color: #e5e7eb;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+  .banner {
+    background-color: #d1d5db;
+    // height: 100vh;
+    padding: 3% 23%;
+    .list-detail {
+      //   height: 100%;
+      background-color: #f3f4f6;
+      padding: 4% 4%;
+      border-radius: 10px;
+      //留言板標題
+      #section1 {
+        padding: 0;
+        h3 {
+          font-weight: bold;
+        }
+      }
+
+      //中間留言文章
+      #section2 {
+        .content {
+          background-color: white;
+          margin-top: 50px;
+          margin-bottom: 50px;
+          padding:15px;
+          .article-box {
+            background-color: white;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            // margin-bottom: 30px;
+            .article-top {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+              // 留言板左方區塊(標題與作者)
+              .article-top-left {
+                display: flex;
+                // 發文標題欄位
+                .article-title-box {
+                  border: 3px solid seagreen;
+                  border-bottom: 0px;
+                  padding: 5px 0 0 5px;
+                  .article-title {
+                    background-color: white;
+                    width: 100%;
+                  }
+                  .title-box {
+                    width: 250px;
+                  }
+                }
+                // 發文作者欄位
+                .article-author-box {
+                  display: flex;
+                  border-top: 3px solid seagreen;
+                  border-right: 3px solid seagreen;
+                  flex-direction: column;
+                  padding: 5px 0 0 5px;
+                  .article-author {
+                    background-color: white;
+                  }
+                  .name-box {
+                    width: 100px;
+                  }
+                }
+              }
+              //留言板上方右邊區塊(發文時間)
+              .article-top-right {
+                display: flex;
+                border: 3px solid seagreen;
+                border-bottom: 0px;
+                padding: 5px 0 0 5px;
+                .article-time {
+                  background-color: white;
+                }
+                .time-box {
+                  width: 150px;
+                }
+              }
+            }
+
+            .article-bot {
+              width: 100%;
+              
+              .article-content {
+                padding: 5px 0 0 5px;
+                min-height: 100px;
+                background-color: white;
+                border: 3px solid seagreen;
+              }
+            }
+          }
+          .function-box {
+            display: flex;
+            justify-content: flex-end;
+            a{
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+
+      //底部留言表單
+      #section3 {
+        .content {
+          background-color: white;
+          
+          .form-box {
+            background-color: white;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .form-top {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              padding: 30px 30px 0px 30px;
+              .form-title{
+                margin-bottom:30px;
+              }  
+              .form-name{
+                margin-bottom: 30px;
+              }
+              span{
+                margin-right:25px;
+              }
+            }
+            .form-bot {
+              display: flex;
+              // flex-direction: column;
+              padding: 0px 30px 30px 30px;
+              .form-content {
+                textarea {
+                  resize: none;
+                }
+              }
+            }
+          }
+        }
+        .button-box{
+          width: 100%;
+          margin-top: 10px;
+          display: flex;
+          justify-content:flex-end;
+          button{
+            border-radius: 30px;
+            border: 1px solid steelblue;
+            background-color:steelblue;
+            color: #fff;
+            width: 100px;
+            &:hover{
+              background-color:blueviolet;
+              border: 1px solid blueviolet;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  //網頁其他資訊
+  //資訊1
+
+  .other-info1 {
+    padding: 0 10%;
+    // height: 35vh;
+    width: 100%;
+    background-color: white;
+    margin: 10% 0;
+    @media (max-width: 763px) {
+      flex-wrap: wrap;
+    }
+
+    //公司
+    .l-box {
+      width: 15%;
+      min-width: 256px;
+      @media (max-width: 763px) {
+        width: 100%;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+      .logo {
+        width: 100%;
+        span {
+          font-size: 1.2rem;
+        }
+        img {
+          border-radius: 50%;
+        }
+      }
+      .info {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+    }
+    // 合作夥伴或其他連結
+    .r-box {
+      width: 70%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      @media (max-width: 763px) {
+        width: 100%;
+        text-align: center;
+      }
+      ul {
+        width: 25%;
+        @media (max-width: 1024px) {
+          width: 50%;
+          margin-bottom: 30px;
+        }
+        @media (max-width: 763px) {
+          width: 100%;
+          margin-bottom: 30px;
+        }
+        li {
+          list-style: none;
+          a {
+            color: black;
+            opacity: 0.6;
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+  //資訊2
+  .other-info2 {
+    background-color: #f3f4f6;
+    .container {
+      // height: 5vh;
+      font-size: 0.9rem;
+      opacity: 0.8;
+
+      p {
+        padding-top: 15px;
+      }
+      .svg {
+        height: 20px;
+        margin-right: 3px;
+        color: #303031;
+        img {
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+  }
+}

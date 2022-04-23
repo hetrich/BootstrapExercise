@@ -25,7 +25,7 @@ nav .container-xxl {
   background-color: white;
   justify-content: space-between;
 }
-@media (max-width: 768px) {
+@media (max-width: 859px) {
   nav .container-xxl {
     display: flex;
   }
@@ -36,7 +36,7 @@ nav .container-xxl a {
 nav .container-xxl i {
   font-size: 25px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 859px) {
   nav .nav-item {
     display: none;
   }
@@ -79,7 +79,7 @@ nav .burger-link {
   background-color: transparent;
   display: none;
 }
-@media (max-width: 768px) {
+@media (max-width: 859px) {
   nav .burger-link {
     display: block;
     width: 100px;
